@@ -1,3 +1,67 @@
 html {
-    background-color: darkgray;
+    font-size: 62.5%;
 }
+
+body {
+    background-color: #363062;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.products {
+    background-color: #4D4C7D;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.product {
+    background-color: #393864;
+    color: #eee;
+    padding: 2rem;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 1.5rem;
+}
+
+.product:hover {
+    background-color: #463d6e;
+    cursor: pointer;
+}
+
+.product__title {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.product__intro {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.product__image {
+    width: 30rem;
+    height: 20rem;
+    object-fit: cover;
+    border: none;
+    border-radius: 8px;
+}
+
+/* <section class="products">
+    <a href="" class="product">
+        <p class="product__title">Title</p>
+        <p class="product__intro">Intro text</p>
+        <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
+    </a>
+</div> */

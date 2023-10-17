@@ -3,8 +3,6 @@
 /**
  * Dit bestand bevat de databaseverbinding.
  *
- * PHP-versie 7.4
- *
  * @category   Database
  * @package    Connection
  * @author     Vlad Verheij

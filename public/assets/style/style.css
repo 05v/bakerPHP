@@ -58,10 +58,52 @@ body {
     border-radius: 8px;
 }
 
-/* <section class="products">
-    <a href="" class="product">
-        <p class="product__title">Title</p>
-        <p class="product__intro">Intro text</p>
-        <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-    </a>
-</div> */
+
+.productpage {
+    background-color: #4D4C7D;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.productpage__title {
+    font-size: 3rem;
+    color: #eee;
+    margin: 0;
+}
+
+.productpage__intro,
+.productpage__description {
+    font-size: 1.8rem;
+    color: #eee;
+    margin: 0;
+}
+
+.productpage__image {
+    width: 80rem;
+    height: 40rem;
+    object-fit: cover;
+    border: none;
+    border-radius: 8px;
+}
+
+
+.productpage__ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.productpage__ingredient {
+    font-size: 1.6rem;
+    color: #eee;
+    margin: 0;
+}

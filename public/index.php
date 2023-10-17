@@ -1,3 +1,9 @@
+<?php
+require_once("../source/db_connect.php");
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,41 +17,21 @@
 
 <body>
     <section class="products">
-        <a href="" class="product">
-            <p class="product__title">Cake Recept</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+        ?><a href="/products/<?php echo $row["slug"]; ?>.php" class="product">
+            <p class="product__title"><?php echo $row["title"]; ?></p>
+            <p class="product__intro"><?php echo $row["intro"]; ?></p>
+            <img src="/assets/images/<?php echo $row["image"]; ?>" alt="Image of <?php echo $row["title"]; ?>"
+                class="product__image">
         </a>
-
-        <a href="" class="product">
-            <p class="product__title">Title</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-        </a>
-
-        <a href="" class="product">
-            <p class="product__title">Title</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-        </a>
-
-        <a href="" class="product">
-            <p class="product__title">Title</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-        </a>
-
-        <a href="" class="product">
-            <p class="product__title">Title</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-        </a>
-
-        <a href="" class="product">
-            <p class="product__title">Title</p>
-            <p class="product__intro">Intro text</p>
-            <img src="/assets/images/cake.webp" alt="Image of Cake" class="product__image">
-        </a>
+        <?php
+            }
+        } else {
+            echo "No products found!";
+        }
+        ?>
     </section>
 </body>
 
